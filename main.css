@@ -618,28 +618,40 @@ hr {
         display:none;
     }
 
-    /* Nested use case content <767 */
-    .use-case-content-block {
-        display: grid;
+    /* The work section <767 */
+
+    .section-work-content-block {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
         grid-column: span 12;
-        grid-template-columns: subgrid;
+        background-color: var(--surface-white);
+        font-family: var(--font-family-sans);
+        padding: 64px;
+        width: 100%;
+    }
+    
+    /* Nested use case content <767 */
+    .section-intro {
+        display: block;
+    }
+    .use-case-content-block {
+        display: flex;
+        flex-direction: column;
         gap: 32px;
+        width: 100%;
     }
     .use-case-copy-block {
         display: flex;
-        grid-column: span 12;
         flex-direction: column; /* Use 'row' if you want text elements side-by-side */
         gap: 16px; 
     }
     .use-case-pic-container {
         display: block;
-        grid-column: span 12;
         border-radius: 32px; 
         width: 100%;
-        max-height: 100%;
-        grid-template-columns: subgrid;
         overflow: hidden; 
-        place-items: center;
     }
     .use-case-img {
         width: 100%;
