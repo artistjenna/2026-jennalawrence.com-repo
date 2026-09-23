@@ -864,6 +864,25 @@ hr {
     .table-of-contents-block {
         display: none;
     }
+    .article-body-container {
+        display: grid;
+        grid-column: span 12;
+        grid-template-columns: subgrid;
+    }
+    .article-body-content {
+        display: flex;
+        grid-column: span 12;  
+        flex-direction: column;
+        gap: 32px; 
+        min-width: 0;
+    }
+    .article-body-content-block {
+        display: flex;
+        grid-column: span 12;  
+        flex-direction: column;
+        gap: 16px; 
+        min-width: 0;
+    }
 
     
     /* Nested footer content <767 */
