@@ -183,7 +183,6 @@ h1 {
     font-weight: var(--font-weight-regular);
     line-height: var(--line-height-normal);
     letter-spacing: var(--letter-spacing-normal);
-    color: var(--typography-white);
 }
 h2 {
     font-family: var(--font-family-serif);
