@@ -674,7 +674,7 @@ body {
     display: flex;
     flex-direction: column; /* Use 'row' if you want text elements side-by-side */
     gap: 8px; 
-    color: var(--typography-soft-grey);
+    color: var(--typography-white);
 }
 .eyebrow-text-container-on-light {
     display: flex;
