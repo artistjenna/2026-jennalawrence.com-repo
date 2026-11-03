@@ -90,6 +90,7 @@ table {
     --accent-navy: #3e60a2;
     --accent-sangria: #a60000;
     --accent-yellow: #f4b23e;
+    --accent-deep-rose: #cd0089;
     --interactive-disabled-surface: #9f9f9f;
     --interactive-secondary-surface-hover: #9c9c9c;
     --interactive-secondary-surface: #878787;
@@ -666,6 +667,9 @@ body {
 }
 .tag-yellow {
     background-color: var(--accent-yellow);
+}
+.tag-deep-rose {
+    background-color: var(--accent-deep-rose);
 }
 .text-link-list {
     display: block;
