@@ -497,11 +497,6 @@ body {
     overflow: hidden; 
     place-items: center;
 }
-.use-case-pic-container iframe {
-    width: 100%;
-    height: 100%;
-    display: block; /* Removes tiny bottom whitespace gap */
-}
 .use-case-img {
     width: 100%;
     height: 100%;
@@ -771,11 +766,6 @@ hr {
         overflow: hidden; 
         place-items: center;
     }
-    .use-case-pic-container iframe {
-        width: 100%;
-        height: 100%;
-        display: block; /* Removes tiny bottom whitespace gap */
-    }
     .use-case-img {
         width: 100%;
         height: auto;
@@ -869,13 +859,7 @@ hr {
         display: block;
         border-radius: 32px; 
         width: 100%;
-        aspect-ratio: 16 / 9;
         overflow: hidden; 
-    }
-    .use-case-pic-container iframe {
-        width: 100%;
-        height: 100%;
-        display: block; /* Removes tiny bottom whitespace gap */
     }
     .use-case-img {
         width: 100%;
