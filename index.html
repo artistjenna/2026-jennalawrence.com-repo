@@ -36,9 +36,41 @@
         
         <!-- The work content-->
 
-        <section class="section-body-content-block" id="thework">
+        <form class="section-body-content-block portfolio-wrapper" id="thework">
             
             <span class="section-intro"><h2>The work</h2></span>
+            
+
+            <!-- Filter bar -->
+            <!-- Hidden Checkboxes (Must be siblings before the controls & grid) -->
+                <input type="checkbox" id="filter-product-design" class="filter-input">
+                <input type="checkbox" id="filter-web-design" class="filter-input">
+                <input type="checkbox" id="filter-learning-experience-design" class="filter-input">
+                <input type="checkbox" id="filter-design-thinking-workshops" class="filter-input">
+                <input type="checkbox" id="filter-ux-research" class="filter-input">
+                <input type="checkbox" id="filter-motion-graphics" class="filter-input">
+                <input type="checkbox" id="filter-branding" class="filter-input">
+            
+            <nav class="filter-bar" aria-label="Filter projects">
+                <p class="text-body-small-uppercase">Filters</p>
+
+                 <!-- Filter Buttons -->
+                <div class="filter-controls">
+                    <button type="reset" class="filter-btn reset-btn">
+                        <span class="text-all">All projects</span>
+                        <span class="text-clear">Clear all filters (<span class="filter-count"></span>)</span>
+                    </button>
+                    |
+
+                    <label for="filter-product-design" class="filter-btn">Product design</label>
+                    <label for="filter-web-design" class="filter-btn">Web designs</label>
+                    <label for="filter-learning-experience-design" class="filter-btn">Learning experience design</label>
+                    <label for="filter-design-thinking-workshops" class="filter-btn">Design thinking workshops</label>
+                    <label for="filter-ux-research" class="filter-btn">UX research</label>
+                    <label for="filter-motion-graphics" class="filter-btn">Motion graphics</label>
+                    <label for="filter-branding" class="filter-btn">Branding</label>
+                </div>
+            </nav>
             
             <!-- Use cases in sections -->
                 <!-- Use case 01 -->
@@ -61,7 +93,6 @@
                         <img src="Assets/Projects/ibm-data-explorer@2x.png" class="use-case-img">
                     </div>
                 </section>
-                <hr>
                 <!-- Use case 02 -->
                 <section class="use-case-content-block">
                     <div class="use-case-copy-block">
@@ -84,7 +115,6 @@
                         <img src="Assets/Projects/gmail@2x.png" class="use-case-img">
                     </div>
                 </section>
-                <hr>
                 <!-- Use case 03 -->
                 <section class="use-case-content-block">
                     <div class="use-case-copy-block">
@@ -107,7 +137,6 @@
                         <img src="Assets/Projects/honda@2x.png" class="use-case-img">
                     </div>
                 </section>
-                <hr>
                 <!-- Use case 04 -->
                 <section class="use-case-content-block">
                     <div class="use-case-copy-block">
@@ -127,7 +156,6 @@
                     <div class="use-case-pic-container">
                         <img src="Assets/Projects/pnc-bank@2x.png" class="use-case-img">
                     </div>
-                <hr>
                 <!-- Use case 05 -->
                 <section class="use-case-content-block">
                     <div class="use-case-copy-block">
@@ -148,7 +176,6 @@
                         <img src="Assets/Projects/merit-ontario@2x.png" class="use-case-img">
                     </div>
                 </section>
-                <hr>
                 <!-- Use case 06 -->
                 <section class="use-case-content-block">
                     <div class="use-case-copy-block">
@@ -169,7 +196,6 @@
                         <img src="Assets/Projects/rich-salesforce@2x.png" class="use-case-img">
                     </div>
                 </section>
-                <hr>
                 <!-- Use case 07 -->
                 <section class="use-case-content-block">
                     <div class="use-case-copy-block">
@@ -178,7 +204,7 @@
                         </div>
                         <p class="text-body-small-uppercase">Vancouver Island University</p>
                         <h3>End-point management strategy</h3>
-                        <p class="text-body-default">This initiative delivered a strategic, user-centric transformation of Vancouver Island University’s (VIU) digital ecosystem to modernize and secure institutional endpoint management.</p>
+                        <p class="text-body-default">This initiative delivered a strategic, user-centric transformation of Vancouver Island University's (VIU) digital ecosystem to modernize and secure institutional endpoint management.</p>
                         <ul>
                             <li>Comprehensive assessment of current endpoint systems and user journeys to eliminate operational silos</li>
                             <li>Cross-functional consensus on critical digital priorities and friction points</li>
@@ -190,7 +216,6 @@
                         <img src="Assets/Projects/vancouver-island-university@2x.png" class="use-case-img">
                     </div>
                 </section>
-                <hr>
                 <!-- Use case 08 -->
                 <section class="use-case-content-block">
                     <div class="use-case-copy-block">
@@ -212,7 +237,6 @@
                         <img src="Assets/Projects/hands-the-family-help-network@2x.png" class="use-case-img">
                     </div>
                 </section>
-                <hr>
                 <!-- Use case 09 -->
                 <section class="use-case-content-block">
                     <div class="use-case-copy-block">
@@ -232,7 +256,6 @@
                         <img src="Assets/Projects/ibm-design-ops@2x.png" class="use-case-img">
                     </div>
                 </section>
-                <hr>
                 <!-- Use case 10 -->
                 <section class="use-case-content-block">
                     <div class="use-case-copy-block">
@@ -255,7 +278,6 @@
                         <img src="Assets/Projects/oise-active-listening@2x.png" class="use-case-img">
                     </div>
                 </section>
-                <hr>
                 <!-- Use case 11 -->
                 <section class="use-case-content-block">
                     <div class="use-case-copy-block">
@@ -276,7 +298,6 @@
                         <img src="Assets/Projects/oise-error-state-interfaces@2x.png" class="use-case-img">
                     </div>
                 </section>
-                <hr>
                 <!-- Use case 12 -->
                 <section class="use-case-content-block">
                     <div class="use-case-copy-block">
@@ -297,7 +318,6 @@
                         <img src="Assets/Projects/waygoodfarm-lasagna-infographic@2x.png" class="use-case-img">
                     </div>
                 </section>
-                <hr>
                 <!-- Use case 13 -->
                 <section class="use-case-content-block">
                     <div class="use-case-copy-block">
@@ -320,7 +340,6 @@
                         <img src="Assets/Projects/oise-design-business-acumen-JLAWRENCE.png" class="use-case-img">
                     </div>
                 </section>
-                <hr>
                 <!-- Use case 14 -->
                 <section class="use-case-content-block">
                     <div class="use-case-copy-block">
@@ -342,7 +361,6 @@
                         <iframe width="100%" height="100%" src="https://www.youtube.com/embed/9DRrhRWotaU?si=c34i9EF4XheKvgji" referrerpolicy="strict-origin-when-cross-origin" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                 </section>
-                <hr>
                 <!-- Use case 15 -->
                 <section class="use-case-content-block">
                     <div class="use-case-copy-block">
@@ -360,7 +378,6 @@
                         <img src="Assets/Projects/waygoodfarm-logo@2x.png" class="use-case-img">
                     </div>
                 </section>
-                <hr>
                 <!-- Use case 00 
                 <section class="use-case-content-block">
                     <div class="use-case-copy-block">
@@ -381,7 +398,6 @@
                         <img src="Assets/Projects/td-commercial-bank@2x.png" class="use-case-img">
                     </div>
                 </section>
-                <hr>
                 -->
 
                 <!-- Use case 00
@@ -406,7 +422,7 @@
                 </section>
                 -->
             </section>
-        </section>
+        </form>
 
         <!-- End of The work content-->
 
@@ -424,7 +440,7 @@
             <div class="footer-content-block">
                 <nav class="footer-nav-content-block">
                     <span class="footer-nav-link-block"><a href="#home">Home</a></span>
-                    <span class="footer-nav-link-block"><a href="#thework">The work</a></span>
+                    <span class="footer-nav-link-block"><a href="thework.html">The work</a></span>
                     <span class="footer-nav-link-block"><a href="blog.html">Blog</a></span>
                    <!-- <span class="footer-nav-link-block"><a href="#experience">Experience</a></span> -->
                   <span class="footer-nav-link-block"><a href="#connect">Connect</a></span>
