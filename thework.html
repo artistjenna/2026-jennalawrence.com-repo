@@ -457,5 +457,26 @@
                 <p class="text-body-small-uppercase">Copyright © 2026 Jenna Lawrence. All rights reserved.</p>
             </div>
         </footer>
+        <script>
+            window.addEventListener('DOMContentLoaded', () => {
+                const params = new URLSearchParams(window.location.search).get('filter');
+                const ids = params
+                    ? params.split(',').map(f => `filter-${f.trim()}`)
+                    : [window.location.hash.slice(1)];
+
+                let applied = false;
+                ids.forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el && el.classList.contains('filter-input')) {
+                        el.checked = true;
+                        applied = true;
+                    }
+                });
+
+                if (applied) {
+                    document.getElementById('thework')?.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        </script>
     </body>
 </html>
