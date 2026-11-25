@@ -404,7 +404,7 @@ body {
     grid-template-columns: repeat(6, 1fr);
     gap: 30px;
     grid-column: span 12;
-    background-color: var(--surface-light-grey);
+    background-color: var(--surface-white);
     padding: 32px 64px 32px 64px;
     place-items: center;
     text-align: center;
