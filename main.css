@@ -80,18 +80,29 @@ table {
     --surface-white: #ffffff;
     --surface-light-grey: #f8f8f8;
     --surface-grey: #d1d1d1;
+    --accent-light-cerulean: #34b6ff;
     --accent-cerulean: #00a3ff;
+    --accent-light-purple: #8948db;
     --accent-purple: #6a19cf;
+    --accent-light-green: #87Ab5a;
     --accent-green: #699532;
+    --accent-light-fucia: #D149f2;
     --accent-fucia: #cc00ff;
-    --accent-orange: #ff7a00;
+    --accent-light-orange: #f8953a;
+    --accent-orange: #ff7a00;    
+    --accent-light-neon-red: #fc317a;
     --accent-neon-red: #ff005c;
+    --accent-light-turquoise: #4fc9b3;
     --accent-turquoise: #12bb9d;
+    --accent-light-navy: #6483bf;
     --accent-navy: #3e60a2;
+    --accent-light-sangria: #bc3939;
     --accent-sangria: #a60000;
+    --accent-light-yellow: #f0c06c;
     --accent-yellow: #f4b23e;
     --accent-black: #000000;
-    --accent-deep-rose: #cd0089;
+    --accent-light-deep-rose: #d242a3;
+    --accent-deep-rose: #cd0089;    
     --interactive-disabled-surface: #9f9f9f;
     --interactive-secondary-surface-hover: #9c9c9c;
     --interactive-secondary-surface: #878787;
@@ -259,7 +270,22 @@ footer a:active {
     color: var(--typography-pink);
     text-decoration: none;
 }
-
+.breadcrumb-on-fucia a:link{
+    color: var(--typography-pink);
+    text-decoration: none;
+}
+.breadcrumb-on-fucia a:visited{
+    color: var(--typography-pink);
+    text-decoration: none;
+}
+.breadcrumb-on-fucia a:hover{
+    color: var(--typography-hot-pink);
+    text-decoration: none;
+}
+.breadcrumb-on-fucia a:active{
+    color: var(--typography-pink);
+    text-decoration: none;
+}
 /* Links styled as buttons */
 
     /* Ghost */
@@ -388,7 +414,7 @@ body {
     grid-template-columns: repeat(12, 1fr);
     gap: 48px;
     grid-column: span 12;
-    background-color: var(--surface-white);
+    background-color: var(--surface-light-grey);
     font-family: var(--font-family-sans);
     padding: 64px;
 }
@@ -480,6 +506,9 @@ body {
     grid-column: span 12;
     grid-template-columns: subgrid;
     gap: 30px;
+    background-color: var(--surface-white);
+    padding: 32px;
+    border-radius: 32px;
 }
 .use-case-copy-block {
     display: flex;
@@ -634,6 +663,21 @@ body {
     line-height: var(--line-height-normal); 
     letter-spacing: var(--letter-spacing-normal);
 }
+.breadcrumb-on-fucia {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    grid-column: span 12;
+    grid-template-columns: subgrid;
+    background-color: var(--surface-dark-fucia);
+    padding: 12px 32px;
+    font-family: var(--font-family-sans);
+    font-size: var(--font-size-sml);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-normal); 
+    letter-spacing: var(--letter-spacing-normal);
+    color: var(--typography-soft-grey);
+}
 .tag {
     padding: 4px 10px 4px 10px;
     color: var(--typography-white);
@@ -703,7 +747,223 @@ hr {
     border: none;
     width: 100%;
 }
+/* Use case filter bar */
 
+/* 1. Wrapper & Counter Setup */
+.portfolio-wrapper {
+    box-sizing: border-box; /* Prevents width: 100% + padding: 64px from overflowing */
+    grid-column: 1 / -1;
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    counter-reset: active-filters;
+}
+
+.portfolio-wrapper > .section-intro {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+/* 2. Hidden Checkboxes & Active Filter Counter */
+.filter-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.filter-input:checked {
+  counter-increment: active-filters;
+}
+
+/* 3. Filter Bar Layout & Pill Buttons */
+.filter-bar {
+  grid-column: 1 / -1;
+  width: 100%;
+  display: flex; 
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.filter-bar > p {
+  margin: 0; 
+}
+
+.filter-controls {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--surface-grey);
+}
+
+.filter-controls::-webkit-scrollbar {
+  display: none;
+}
+
+.filter-btn {
+  flex-shrink: 0;
+  white-space: nowrap;
+  padding: 0.5rem 1rem;
+  border: 1.25px solid var(--stroke-primary-blue);
+  border-radius: 16px;
+  background: var(--surface-light-blue);
+  color: var(--typography-dark-cerulean);
+  cursor: pointer;
+  font-size: var(--font-size-sml);
+  user-select: none;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+  background: var(--surface-white);
+}
+
+/* 4. Active Pill Colors & Hover States per Category */
+#filter-product-design:checked ~ .filter-bar label[for="filter-product-design"],
+#filter-web-design:checked ~ .filter-bar label[for="filter-web-design"],
+#filter-learning-experience-design:checked ~ .filter-bar label[for="filter-learning-experience-design"],
+#filter-design-thinking-workshops:checked ~ .filter-bar label[for="filter-design-thinking-workshops"],
+#filter-ux-research:checked ~ .filter-bar label[for="filter-ux-research"],
+#filter-motion-graphics:checked ~ .filter-bar label[for="filter-motion-graphics"],
+#filter-branding:checked ~ .filter-bar label[for="filter-branding"] {
+  color: var(--typography-white);
+}
+
+#filter-product-design:checked ~ .filter-bar label[for="filter-product-design"] {
+  background: var(--accent-fucia);
+  border-color: var(--accent-fucia);
+}
+
+#filter-product-design:checked ~ .filter-bar label[for="filter-product-design"]:hover {
+  background: var(--accent-light-fucia);
+  border-color: var(--accent-light-fucia);
+}
+
+#filter-web-design:checked ~ .filter-bar label[for="filter-web-design"] {
+  background: var(--accent-orange);
+  border-color: var(--accent-orange);
+}
+
+#filter-web-design:checked ~ .filter-bar label[for="filter-web-design"]:hover {
+  background: var(--accent-light-orange);
+  border-color: var(--accent-light-orange);
+}
+
+#filter-learning-experience-design:checked ~ .filter-bar label[for="filter-learning-experience-design"] {
+  background: var(--accent-purple);
+  border-color: var(--accent-purple);
+}
+
+#filter-learning-experience-design:checked ~ .filter-bar label[for="filter-learning-experience-design"]:hover {
+  background: var(--accent-light-purple);
+  border-color: var(--accent-light-purple);
+}
+
+#filter-design-thinking-workshops:checked ~ .filter-bar label[for="filter-design-thinking-workshops"] {
+  background: var(--accent-green);
+  border-color: var(--accent-green);
+}
+
+#filter-design-thinking-workshops:checked ~ .filter-bar label[for="filter-design-thinking-workshops"]:hover {
+  background: var(--accent-light-green);
+  border-color: var(--accent-light-green);
+}
+
+#filter-ux-research:checked ~ .filter-bar label[for="filter-ux-research"] {
+  background: var(--accent-cerulean);
+  border-color: var(--accent-cerulean);
+}
+
+#filter-ux-research:checked ~ .filter-bar label[for="filter-ux-research"]:hover {
+  background: var(--accent-light-cerulean);
+  border-color: var(--accent-light-cerulean);
+}
+
+#filter-motion-graphics:checked ~ .filter-bar label[for="filter-motion-graphics"] {
+  background: var(--accent-deep-rose);
+  border-color: var(--accent-deep-rose);
+}
+
+#filter-motion-graphics:checked ~ .filter-bar label[for="filter-motion-graphics"]:hover {
+  background: var(--accent-light-deep-rose);
+  border-color: var(--accent-light-deep-rose);
+}
+
+#filter-branding:checked ~ .filter-bar label[for="filter-branding"] {
+  background: var(--accent-turquoise);
+  border-color: var(--accent-turquoise);
+}
+
+#filter-branding:checked ~ .filter-bar label[for="filter-branding"]:hover {
+  background: var(--accent-light-turquoise);
+  border-color: var(--accent-light-turquoise);
+}
+
+/* 5. "All Projects" / "Clear all filters (#)" Reset Button */
+
+.reset-btn {
+  background: var(--accent-neon-red);
+  color: var(--typography-white);
+  border-color: var(--accent-neon-red);
+}
+
+.reset-btn:hover {
+  background: var(--accent-light-neon-red);
+  border-color: var(--accent-light-neon-red);
+}
+
+.reset-btn .text-clear {
+  display: none;
+}
+
+/* Active filtering ("Clear all filters (#)") */
+.portfolio-wrapper:has(.filter-input:checked) .reset-btn {
+  background: var(--surface-light-blue);
+  border-color: var(--stroke-primary-blue);
+  color: var(--typography-dark-cerulean);
+}
+
+.portfolio-wrapper:has(.filter-input:checked) .reset-btn:hover {
+  background: var(--surface-white);
+}
+
+.portfolio-wrapper:has(.filter-input:checked) .reset-btn .text-all {
+  display: none;
+}
+
+.portfolio-wrapper:has(.filter-input:checked) .reset-btn .text-clear {
+  display: inline;
+}
+
+.filter-count::after {
+  content: counter(active-filters);
+}
+
+/* 6. Subgrid Overflow Prevention & Use Case Filtering Logic */
+.use-case-content-block,
+.use-case-content-block > * {
+  min-width: 0;
+}
+
+/* Hide all use cases when ANY filter is checked */
+.portfolio-wrapper:has(.filter-input:checked) .use-case-content-block {
+  display: none;
+}
+
+/* Reveal use cases that contain the matching color tag */
+#filter-product-design:checked ~ .use-case-content-block:has(.tag-fucia),
+#filter-web-design:checked ~ .use-case-content-block:has(.tag-orange),
+#filter-learning-experience-design:checked ~ .use-case-content-block:has(.tag-purple),
+#filter-design-thinking-workshops:checked ~ .use-case-content-block:has(.tag-green),
+#filter-ux-research:checked ~ .use-case-content-block:has(.tag-blue),
+#filter-motion-graphics:checked ~ .use-case-content-block:has(.tag-deep-rose),
+#filter-branding:checked ~ .use-case-content-block:has(.tag-turquoise) {
+  display: grid;
+}
 
 /* Media queries for smaller screen sizes */
 
@@ -846,7 +1106,6 @@ hr {
         grid-column: span 12;
         background-color: var(--surface-white);
         font-family: var(--font-family-sans);
-        padding: 64px;
         width: 100%;
     }
     
@@ -859,6 +1118,8 @@ hr {
         flex-direction: column;
         gap: 32px;
         width: 100%;
+        background-color: var(--surface-white);
+        padding: 0 0 32px 0;
     }
     .use-case-copy-block {
         display: flex;
