@@ -464,16 +464,17 @@
             ? params.split(',').map(f => `filter-${f.trim()}`)
             : [window.location.hash.slice(1)];
 
-            const matchingInputs = ids
-            .map(id => document.getElementById(id))
-            .filter(el => el && el.classList.contains('filter-input'));
-
-            const applyFilters = () => {
-            matchingInputs.forEach(el => { el.checked = true; });
-            };
+            let applied = false;
+            ids.forEach(id => {
+            const el = document.getElementById(id);
+            if (el && el.classList.contains('filter-input')) {
+                el.checked = true;
+                applied = true;
+            }
+            });
 
             const target = document.getElementById('thework');
-            if (matchingInputs.length && target) {
+            if (applied && target) {
             const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
             setTimeout(() => {
@@ -482,7 +483,6 @@
 
                 if (reduceMotion) {
                 window.scrollTo(0, end);
-                applyFilters();
                 return;
                 }
 
@@ -490,14 +490,10 @@
                 const scroll = now => {
                 const p = Math.min((now - t0) / 2500, 1); // 2500ms = 2.5s gentle scroll
                 window.scrollTo(0, start + (end - start) * (p < 0.5 ? 2 * p * p : -1 + (4 - 2 * p) * p));
-                if (p < 1) {
-                    requestAnimationFrame(scroll);
-                } else {
-                    applyFilters(); // Applies the filters right when the scroll arrives
-                }
+                if (p < 1) requestAnimationFrame(scroll);
                 };
                 requestAnimationFrame(scroll);
-            }, 1500); // 1500ms = 1.5s delay before scrolling begins
+            }, 2000); // 2000ms = 2s delay before scrolling begins
             }
         });
         </script>
